@@ -1,0 +1,23 @@
+
+
+<h1>Listing </h1>
+
+
+<table class="table">
+<tr>
+<th>id</th>	
+<th>Title</th>
+<th>Address</th>
+<td>Price</td>
+<td
+</tr>
+<% @listings.each do |listing| %>
+<tr>
+	<td><%= listing.id %></td>
+	<td><%= listing.title %></td>
+	<td><%= listing.address %></td>
+	<td><%= listing.price %></td>
+	<td><%= link_to "More info", listing_path(listing) %></td>
+	</tr>
+<% end %>
+</table>
