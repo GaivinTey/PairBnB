@@ -1,23 +1,26 @@
 
 
-<h1>Listing </h1>
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Search
+    <%= f.text_field(
+      :search_query,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
 
 
-<table class="table">
-<tr>
-<th>id</th>	
-<th>Title</th>
-<th>Address</th>
-<td>Price</td>
-<td
-</tr>
-<% @listings.each do |listing| %>
-<tr>
-	<td><%= listing.id %></td>
-	<td><%= listing.title %></td>
-	<td><%= listing.address %></td>
-	<td><%= listing.price %></td>
-	<td><%= link_to "More info", listing_path(listing) %></td>
-	</tr>
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%= render_filterrific_spinner %>
 <% end %>
-</table>
+
+<%= render( partial: 'listings/list', locals: { listings: @listings } ) %>
+
+
+
