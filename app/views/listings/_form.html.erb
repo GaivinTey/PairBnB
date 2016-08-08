@@ -1,0 +1,27 @@
+<%= form_for @listing do |f| %>
+ <%= f.label :title %>
+ <%= f.text_field :title %>
+ <%= f.label :address %>
+ <%= f.text_area :address%>
+ <%= f.label :price %>
+ <%= f.number_field :price %>
+ <div>
+ <%= f.label :tag %>
+ <ul>
+ <%= f.collection_check_boxes :tag_ids, Tag.all , :id, :text do |b| %>
+    <li><%=b.check_box + b.text%></li>
+ <% end %>
+ </ul>
+ </div>
+
+
+<div>
+	<%= f.file_field :avatars, multiple: true %>
+</div>
+
+
+
+<%= f.submit "Create Listing" %>
+
+ <% end %>
+

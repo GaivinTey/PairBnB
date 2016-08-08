@@ -15,6 +15,23 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'clearance'
 
+gem 'figaro'
+
+gem 'omniauth'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'omniauth-facebook'
+
+gem 'filterrific'
+
+gem 'bootstrap-datepicker-rails'
+
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'mini_magick'
+
+gem "fog"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

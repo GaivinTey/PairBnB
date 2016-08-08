@@ -1,0 +1,17 @@
+<ul> 
+
+<li> <%= @listing.id %> </li>
+<li> <h4> Title: </h4><%= @listing.title %>  </li>
+<li> <h4> Address: </h4><%= @listing.address %> </li>
+ <li><h4> Price: </h4><%= @listing.price %> </li>
+ <% @listing.tag.each do |tag| %> 
+<li> <%= tag.text %> </li>
+ <%end%>
+</ul>
+
+<% @listing.avatars.each do |avatar| %>
+    <%= image_tag(avatar) %>
+<% end %>
+
+<%= link_to "Make a Booking", new_listing_booking_path(@listing) %>
+
