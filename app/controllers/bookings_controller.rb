@@ -16,12 +16,13 @@ class BookingsController < ApplicationController
      @booking.listing = @listing
       respond_to do |format|
 	      if @booking.save
+	      	BookingMailer.booking_email(@booking, @listing).deliver
           reserve_dates(@booking.startdate, @booking.enddate, @listing.id)
           format.html { redirect_to bookings_path, notice: 'Booking was successfully created.' }
-	        else
-            @errors = @booking.errors.full_messages
-          	format.html { redirect_to listings_path }
-	        end
+        else
+          @errors = @booking.errors.full_messages
+        	format.html { redirect_to listings_path }
+        end
       end
 	  else
       redirect_to '/sign_in', notice: 'You are not logged in' 

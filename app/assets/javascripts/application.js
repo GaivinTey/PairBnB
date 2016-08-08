@@ -18,11 +18,4 @@
 //= require filterrific/filterrific-jquery
 //= require bootstrap-datepicker
 //= require bookings.js
-$(document).ready(function(){
-	$('.input-daterange').datepicker({
-	    multidate: false
-	    format: "mm-dd--yy",
-	  
-	});
-});
 
