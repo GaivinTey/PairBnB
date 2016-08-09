@@ -32,6 +32,8 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
 gem "fog"
+
+gem "sidekiq"
 	
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
