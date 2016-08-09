@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
      @booking.listing = @listing
       respond_to do |format|
 	      if @booking.save
-	      	BookingMailer.booking_email(@booking, @listing).deliver
+	      	BookingMailerJob.perform_later(@booking, @listing)
           reserve_dates(@booking.startdate, @booking.enddate, @listing.id)
           format.html { redirect_to bookings_path, notice: 'Booking was successfully created.' }
         else
