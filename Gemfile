@@ -43,9 +43,7 @@ gem 'puma'
 
 gem 'searchkick'
 
-
 gem 'capybara'
-
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
