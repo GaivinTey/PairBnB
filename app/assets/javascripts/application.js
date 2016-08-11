@@ -18,4 +18,5 @@
 //= require filterrific/filterrific-jquery
 //= require bootstrap-datepicker
 //= require bookings.js
+//= require payments.coffee
 
