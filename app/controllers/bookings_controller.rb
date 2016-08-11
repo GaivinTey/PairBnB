@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
       respond_to do |format|
 	      if @booking.save
           DeleteBookingJob.set(wait: 30.minutes).perform_later(@booking)
-	      	BookingMailerJob.perform_later(@booking, @listing)
+	      	
           reserve_dates(@booking.startdate, @booking.enddate, @listing.id)
           format.html { redirect_to new_booking_payment_path(@booking), notice: 'Booking was successfully created.' }
         else
