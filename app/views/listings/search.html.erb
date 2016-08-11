@@ -1,0 +1,35 @@
+
+
+
+<table class="table">
+<tr>
+<th>id</th>	
+<th>Title</th>
+<th>Address</th>
+<th>Price</th>
+<th>Actions</th>
+<td
+</tr>
+<% @results.each do |result| %>
+<tr>
+	<td><%= result.id %></td>
+	<td><%= result.title %></td>
+	<td><%= result.address %></td>
+	<td><%= result.price %></td>
+	<td>
+	<% if !result.avatars.empty? %>
+		<% result.avatars.each do |pic|%>
+			<%= image_tag pic.thumb %>
+		<% end %>
+	<% end %>
+	</td>
+	<% if signed_in? && current_user.id == result.user_id %>
+		<td><%= link_to "Edit", edit_listing_path(result) %></td>
+		<td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
+<td><%= link_to "More info", listing_path(result) %></td>
+	</tr>
+<% end %>
+</table>
+
+

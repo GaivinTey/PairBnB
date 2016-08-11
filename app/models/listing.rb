@@ -5,6 +5,8 @@ class Listing < ActiveRecord::Base
   has_many :bookings
   has_many :available_dates
 
+    searchkick
+
     mount_uploaders :avatars, AvatarUploader
 
 	filterrific(
@@ -53,6 +55,14 @@ scope :search_query, lambda { |query|
       ['Price (Low-High)', 'price_asc'],
       
     ]
+  end
+
+  def search_data
+    {
+      title: title,
+      address: address,
+      price: price
+    }
   end
 
 
