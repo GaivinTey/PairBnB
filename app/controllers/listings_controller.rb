@@ -1,8 +1,12 @@
 class ListingsController < ApplicationController
-	before_action :find_listing, only: [:show, :edit, :update, :destroy]
+	before_action :find_listing, only: [:show, :edit, :update, :destroy,]
 
 
 		def index
+
+		
+			
+
 		@filterrific = initialize_filterrific(
       Listing,
       params[:filterrific],
@@ -52,6 +56,14 @@ class ListingsController < ApplicationController
     format.html { redirect_to listings_url, notice: 'listing was successfully destroyed.' }
     end
   end
+
+  def search
+		@results = Listing.search(params[:search_result])
+	
+		
+  end
+
+
 
 	def find_listing
 		@listing = Listing.find(params[:id])

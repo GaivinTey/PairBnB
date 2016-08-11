@@ -10,7 +10,7 @@
 </ul>
 
 <% @listing.avatars.each do |avatar| %>
-    <%= image_tag(avatar) %>
+    <%= image_tag avatar.big_thumb %>
 <% end %>
 
 <%= link_to "Make a Booking", new_listing_booking_path(@listing) %>

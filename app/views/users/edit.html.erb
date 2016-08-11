@@ -1,1 +1,26 @@
-<%= render partial: '/users/form' %>
+
+<%= form_for @user, html: { multipart: true } do |form| %>
+
+<div class="text-field">
+  <%= form.label :email %>
+  <%= form.text_field :email, type: 'email' %>
+</div>
+
+<div class="password-field">
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+</div>
+
+<div>
+	<%= form.file_field :avatar, multiple: false %>
+</div>
+
+		<div>
+      <%= form.check_box :remove_avatar %>
+      Remove avatar
+    </label>
+ </div>
+
+ <%=form.submit %>
+
+ <%end%>
