@@ -39,6 +39,8 @@ gem "braintree"
 
 gem "gon"
 
+gem 'puma'
+
 gem 'searchkick'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -71,3 +73,12 @@ group :development do
   gem 'spring'
 end
 
+group :test do 
+	gem 'capybara'
+	gem 'database_cleaner'
+end
+
+group :production do 
+	gem 'skylight'
+	gem 'rails_12factor'
+end
