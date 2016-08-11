@@ -16,9 +16,10 @@ class BookingsController < ApplicationController
      @booking.listing = @listing
       respond_to do |format|
 	      if @booking.save
+          DeleteBookingJob.set(wait: 30.minutes).perform_later(@booking)
 	      	BookingMailerJob.perform_later(@booking, @listing)
           reserve_dates(@booking.startdate, @booking.enddate, @listing.id)
-          format.html { redirect_to bookings_path, notice: 'Booking was successfully created.' }
+          format.html { redirect_to new_booking_payment_path(@booking), notice: 'Booking was successfully created.' }
         else
           @errors = @booking.errors.full_messages
         	format.html { redirect_to listings_path }

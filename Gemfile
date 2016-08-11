@@ -34,6 +34,10 @@ gem 'mini_magick'
 gem "fog"
 
 gem "sidekiq"
+
+gem "braintree"
+
+gem "gon"
 	
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
