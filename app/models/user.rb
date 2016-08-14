@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :payments
   mount_uploader :avatar, AvatarUploader
 
+    validates_presence_of :email
+
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|
     	u.password = "PLACEHOLDER"

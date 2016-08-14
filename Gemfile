@@ -42,6 +42,10 @@ gem "gon"
 gem 'puma'
 
 gem 'searchkick'
+
+
+gem 'capybara'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -74,9 +78,16 @@ group :development do
 end
 
 group :test do 
-	gem 'capybara'
-	gem 'database_cleaner'
-end
+  gem 'factory_girl_rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'shoulda-callback-matchers'
+  gem 'capybara'
+  gem 'database_cleaner'
+  end
 
 group :production do 
 	gem 'skylight'
