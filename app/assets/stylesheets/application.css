@@ -11,14 +11,9 @@
  * file per style scope.
  *
  
-
-
-
-*= require font-awesome
 *= require css/modern-business.css
 *= require_tree .
 *= require_self
-
-
-
  */
+
+
